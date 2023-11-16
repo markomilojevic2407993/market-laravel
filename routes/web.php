@@ -1,0 +1,32 @@
+<?php
+
+use App\Http\Controllers\ContactControllers;
+use App\Http\Controllers\Home;
+use App\Http\Controllers\Registration;
+use App\Http\Controllers\Shop;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web RoutesC
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+Route::get('/contact', [ContactControllers::class, 'index']);
+Route::post('/contactSend', [ContactControllers::class, 'send']);
+
+Route::get('/registration', [Registration::class, 'index']);
+Route::post('/sendRegistration', [Registration::class, 'send']);
+
+Route::get('/home', [Home::class, 'index']);
+Route::get('/shop', [Shop::class, 'index']);
+
+// registration
+Route::get('/', function () {
+    return view('welcome');
+});
