@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/admin/delete/{product}', [Admin::class, 'delete']);
 Route::get('/admin/home', [Admin::class, 'index']);
 Route::post('/admin/addProducts', [Admin::class, 'add']);
 Route::get('/admin/products', [Admin::class, 'tableListProducts']);

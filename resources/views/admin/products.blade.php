@@ -32,7 +32,7 @@
       <td>{{$product->description}}</td>
       <td>{{$product->amount}}</td>
       <td>{{$product->price}}</td>
-      <td><a href="">{{$product->id}}</a></td>
+      <td><a href="/admin/delete/{{$product->id}}">Delete{{$product->id}}</a></td>
     </tr>
     
   </tbody>

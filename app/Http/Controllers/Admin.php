@@ -12,6 +12,12 @@ class Admin extends Controller
         return view('/admin/home');
     }
 
+    // izvalci sve iz baze sa prefiksom modela
+    public function delete(ProductModel $product)
+    {
+        $product->delete();
+    }
+
     public function tableListProducts()
     {
         $products = ProductModel::all();
