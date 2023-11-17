@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CustomerModel;
 use App\Models\ProductModel;
 use Illuminate\Http\Request;
 
@@ -12,17 +13,27 @@ class Admin extends Controller
         return view('/admin/home');
     }
 
+    public function deleteCustomer(CustomerModel $customer)
+    {
+        $customer->delete();
+
+        return redirect()->back();
+    }
+
     // izvalci sve iz baze sa prefiksom modela
     public function delete(ProductModel $product)
     {
         $product->delete();
+
+        return redirect()->back();
     }
 
     public function tableListProducts()
     {
+        $customers = CustomerModel::all();
         $products = ProductModel::all();
 
-        return view('/admin/products', compact('products'));
+        return view('/admin/products', compact('products', 'customers'));
     }
 
     public function delate(Request $request)

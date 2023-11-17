@@ -16,4 +16,5 @@
     <button class="btn btn-light" type="submit">add product</button>
 </form>
 
+
 @endsection

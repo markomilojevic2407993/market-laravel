@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/admin/delete/{product}', [Admin::class, 'delete']);
+Route::get('/admin/deleteCustomer/{customer}', [Admin::class, 'deleteCustomer']);
 Route::get('/admin/home', [Admin::class, 'index']);
 Route::post('/admin/addProducts', [Admin::class, 'add']);
 Route::get('/admin/products', [Admin::class, 'tableListProducts']);
