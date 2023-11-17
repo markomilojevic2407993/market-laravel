@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin;
 use App\Http\Controllers\ContactControllers;
 use App\Http\Controllers\Home;
 use App\Http\Controllers\Registration;
@@ -16,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/admin/home', [Admin::class, 'index']);
+Route::post('/admin/addProducts', [Admin::class, 'add']);
+Route::get('/admin/products', [Admin::class, 'tableListProducts']);
 
 Route::get('/contact', [ContactControllers::class, 'index']);
 Route::post('/contactSend', [ContactControllers::class, 'send']);
