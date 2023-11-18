@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/admin/customer', [Admin::class, 'tebleListProducts']);
 Route::get('/admin/delete/{product}', [Admin::class, 'delete']);
 Route::get('/admin/deleteCustomer/{customer}', [Admin::class, 'deleteCustomer']);
 Route::get('/admin/home', [Admin::class, 'index']);

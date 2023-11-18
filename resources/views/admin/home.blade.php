@@ -4,7 +4,8 @@
 <div class="container">
     <nav class="text-center">
         <a class="m-4" href="/admin/home">HomeAdmin</a>
-        <a class="m-4" href="/admin/products">ProductsList</a>
+        <a class="m-4" href="/admin/products">Products List</a>
+        <a class="m-4" href="/admin/customer">Customer List</a>
     </nav>
 </div>
 <form class="container" action="/admin/addProducts" method="post">

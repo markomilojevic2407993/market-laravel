@@ -13,6 +13,13 @@ class Admin extends Controller
         return view('/admin/home');
     }
 
+    public function tebleListProducts()
+    {
+        $customers = CustomerModel::all();
+
+        return view('/admin/customer', compact('customers'));
+    }
+
     public function deleteCustomer(CustomerModel $customer)
     {
         $customer->delete();
