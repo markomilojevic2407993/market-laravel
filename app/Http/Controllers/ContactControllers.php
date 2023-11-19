@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class ContactControllers extends Controller
 {
+    public function tableContact()
+    {
+        $allContacts = Contact::all();
+
+        return view('/admin/contact', compact('allContacts'));
+    }
+
     public function index()
     {
         $allContacts = Contact::all();
@@ -27,5 +34,12 @@ class ContactControllers extends Controller
         ]);
 
         return redirect('/contact');
+    }
+
+    public function delete(Contact $delete)
+    {
+        $delete->delete();
+
+        return redirect()->back();
     }
 }

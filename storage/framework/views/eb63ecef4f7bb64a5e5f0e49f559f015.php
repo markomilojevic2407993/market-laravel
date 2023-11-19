@@ -22,11 +22,6 @@ Contact
 </form>
 
 
-<div class="container">
-  <?php $__currentLoopData = $allContacts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $message): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-  <p><?php echo e($message->email); ?></p>
-  <p><?php echo e($message->message); ?></p>
-  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-</div>
+
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laravel\pijaca\resources\views//contact.blade.php ENDPATH**/ ?>

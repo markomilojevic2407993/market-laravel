@@ -33,9 +33,9 @@
     <td>{{$customer->name}}</td>
     <td>{{$customer->email}}</td>
     <td>{{$customer->price}}</td>
-    <td><a class="btn btn-sm btn-danger" href="/admin/deleteCustomer/{{$customer->id}}">Delete{{$customer->id}}</a></p>
+    <td><a class="btn btn-sm btn-danger" href="{{route('obrisiKorisnika',['customer'=>$customer->id])}}" >Delete{{$customer->id}}</a></p>
   </tr>
-@endforeach
+@endforeach 
 </tbody>
 </table>
 @endsection

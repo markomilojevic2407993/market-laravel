@@ -43,18 +43,13 @@ class Admin extends Controller
         return view('/admin/products', compact('products', 'customers'));
     }
 
-    public function delate(Request $request)
-    {
-        $delate = ProductModel::destroy('');
-    }
-
     public function add(Request $request)
     {
         $request->validate([
-            'name' => 'required|string',
+            'name' => 'required|string|unique:product',
             'description' => 'required|string',
-            'amount' => 'required',
-            'price' => 'required',
+            'amount' => 'required|min:0', // request required
+            'price' => 'required|min:0',
         ]);
         ProductModel::create([
             'name' => $request->input('name'),
@@ -63,6 +58,6 @@ class Admin extends Controller
             'price' => $request->input('price'),
         ]);
 
-        return redirect('admin/home');
+        return redirect('/admin/products');
     }
 }

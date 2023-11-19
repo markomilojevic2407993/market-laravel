@@ -22,10 +22,5 @@ Contact
 </form>
 
 
-<div class="container">
-  @foreach($allContacts as $message)
-  <p>{{$message->email}}</p>
-  <p>{{$message->message}}</p>
-  @endforeach
-</div>
+
 @endsection

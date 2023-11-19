@@ -18,14 +18,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/admin/customer', [Admin::class, 'tebleListProducts']);
-Route::get('/admin/delete/{product}', [Admin::class, 'delete']);
-Route::get('/admin/deleteCustomer/{customer}', [Admin::class, 'deleteCustomer']);
+Route::get('/admin/products', [Admin::class, 'tableListProducts']);
+Route::get('/admin/delete/{product}', [Admin::class, 'delete'])->name('obrisiProizvod');
+Route::get('/admin/deleteCustomer/{customer}', [Admin::class, 'deleteCustomer'])->name('obrisiKorisnika');
 Route::get('/admin/home', [Admin::class, 'index']);
 Route::post('/admin/addProducts', [Admin::class, 'add']);
-Route::get('/admin/products', [Admin::class, 'tableListProducts']);
+Route::get('/admin/update{product}', [Admin::class, 'update'])->name('update.product');
 
 Route::get('/contact', [ContactControllers::class, 'index']);
+Route::get('/admin/contact', [ContactControllers::class, 'tableContact']);
 Route::post('/contactSend', [ContactControllers::class, 'send']);
+Route::get('/admin/custoerDelete/{delete}', [ContactControllers::class, 'delete']);
 
 Route::get('/registration', [Registration::class, 'index']);
 Route::post('/sendRegistration', [Registration::class, 'send']);

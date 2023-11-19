@@ -24,7 +24,7 @@
       <th scope="col">Description</th>
       <th scope="col">Amount</th>
       <th scope="col">Price</th>
-      <th scope="col">Crud</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -35,7 +35,12 @@
       <td><?php echo e($product->description); ?></td>
       <td><?php echo e($product->amount); ?></td>
       <td><?php echo e($product->price); ?></td>
-      <td><a class="btn btn-sm btn-danger" href="/admin/delete/<?php echo e($product->id); ?>">Delete<?php echo e($product->id); ?></a></td>  
+      <td>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <a class="btn btn-sm btn-outline-danger" href="<?php echo e(route('obrisiProizvod',['product'=>$product->id])); ?>" >Delete</a>
+          <a href="" class="btn btn-sm btn-outline-success">Update</a>
+        </div> 
+      </td>
     </tr>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
   </tbody>

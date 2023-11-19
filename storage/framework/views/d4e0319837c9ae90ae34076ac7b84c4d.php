@@ -33,9 +33,9 @@
     <td><?php echo e($customer->name); ?></td>
     <td><?php echo e($customer->email); ?></td>
     <td><?php echo e($customer->price); ?></td>
-    <td><a class="btn btn-sm btn-danger" href="/admin/deleteCustomer/<?php echo e($customer->id); ?>">Delete<?php echo e($customer->id); ?></a></p>
+    <td><a class="btn btn-sm btn-danger" href="<?php echo e(route('obrisiKorisnika',['customer'=>$customer->id])); ?>" >Delete<?php echo e($customer->id); ?></a></p>
   </tr>
-<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
 </tbody>
 </table>
 <?php $__env->stopSection(); ?>

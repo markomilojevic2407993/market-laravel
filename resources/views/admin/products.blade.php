@@ -24,7 +24,7 @@
       <th scope="col">Description</th>
       <th scope="col">Amount</th>
       <th scope="col">Price</th>
-      <th scope="col">Crud</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -35,7 +35,12 @@
       <td>{{$product->description}}</td>
       <td>{{$product->amount}}</td>
       <td>{{$product->price}}</td>
-      <td><a class="btn btn-sm btn-danger" href="/admin/delete/{{$product->id}}">Delete{{$product->id}}</a></td>  
+      <td>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <a class="btn btn-sm btn-outline-danger" href="{{route('obrisiProizvod',['product'=>$product->id])}}" >Delete</a>
+          <a href="{{route('update.product',['product=>$product->id'])}}" class="btn btn-sm btn-outline-success">Update</a>
+        </div> 
+      </td>
     </tr>
     @endforeach
   </tbody>
