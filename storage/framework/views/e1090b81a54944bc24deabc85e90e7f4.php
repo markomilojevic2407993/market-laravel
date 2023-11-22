@@ -38,7 +38,7 @@
       <td>
         <div class="btn-group" role="group" aria-label="Basic example">
           <a class="btn btn-sm btn-outline-danger" href="<?php echo e(route('obrisiProizvod',['product'=>$product->id])); ?>" >Delete</a>
-          <a href="" class="btn btn-sm btn-outline-success">Update</a>
+          <a href="<?php echo e(route('update.product',['id'=>$product->id])); ?>" class="btn btn-sm btn-outline-success">Update</a>
         </div> 
       </td>
     </tr>

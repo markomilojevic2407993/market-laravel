@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class Admin extends Controller
 {
+    public function update(Request $request, $id)
+    {
+        $product = ProductModel::where(['id' => $id])->first();
+
+        return view('/admin/editUpdate', compact('product'));
+    }
+
     public function index()
     {
         return view('/admin/home');

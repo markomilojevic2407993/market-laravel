@@ -23,7 +23,7 @@ Route::get('/admin/delete/{product}', [Admin::class, 'delete'])->name('obrisiPro
 Route::get('/admin/deleteCustomer/{customer}', [Admin::class, 'deleteCustomer'])->name('obrisiKorisnika');
 Route::get('/admin/home', [Admin::class, 'index']);
 Route::post('/admin/addProducts', [Admin::class, 'add']);
-Route::get('/admin/update{product}', [Admin::class, 'update'])->name('update.product');
+Route::get('/admin/update/{id}', [Admin::class, 'update'])->name('update.product');
 
 Route::get('/contact', [ContactControllers::class, 'index']);
 Route::get('/admin/contact', [ContactControllers::class, 'tableContact']);
