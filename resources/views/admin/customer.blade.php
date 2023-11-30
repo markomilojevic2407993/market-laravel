@@ -33,7 +33,8 @@
     <td>{{$customer->name}}</td>
     <td>{{$customer->email}}</td>
     <td>{{$customer->price}}</td>
-    <td><a class="btn btn-sm btn-danger" href="{{route('obrisiKorisnika',['customer'=>$customer->id])}}" >Delete{{$customer->id}}</a></p>
+    <td><a class="btn btn-sm btn-danger" href="{{route('obrisiKorisnika',['customer'=>$customer->id])}}" >Delete</a>
+    <a href="{{route('editCustomer',['id'=>$customer->id])}}" class="btn btn-warning btn-sm">Update</a>
   </tr>
 @endforeach 
 </tbody>

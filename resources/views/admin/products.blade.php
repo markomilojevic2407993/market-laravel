@@ -37,7 +37,7 @@
       <td>{{$product->price}}</td>
       <td>
         <div class="btn-group" role="group" aria-label="Basic example">
-          <a href="">jsfskfjsakfjs</a>
+          
           <a class="btn btn-sm btn-outline-danger" href="{{route('obrisiProizvod',['product'=>$product->id])}}" >Delete</a>
           <a href="{{route('update.product',['id'=>$product->id])}}" class="btn btn-sm btn-outline-success">Update</a>
         </div> 

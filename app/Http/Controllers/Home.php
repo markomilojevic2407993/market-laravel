@@ -9,7 +9,7 @@ class Home extends Controller
 {
     public function index()
     {
-        $allProducts = ProductModel::orderBy('id', 'desc')->take(1)->get();
+        $allProducts = ProductModel::all();
         $allCustomer = CustomerModel::all();
 
         return view('home', compact('allProducts', 'allCustomer'));

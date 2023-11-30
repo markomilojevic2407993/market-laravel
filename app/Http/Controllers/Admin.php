@@ -8,11 +8,46 @@ use Illuminate\Http\Request;
 
 class Admin extends Controller
 {
+    public function saveEditCustomer(Request $request, $id)
+    {
+        $customer = CustomerModel::where(['id' => $id])->first();
+
+        $customer->name = $request->input('name');
+        $customer->email = $request->input('email');
+        $customer->pass = $request->input('pass');
+        $customer->price = $request->input('price');
+
+        $customer->save();
+
+        return redirect()->route('adminCustomer');
+    }
+
+    public function getEditCustomer(Request $request, $id)
+    {
+        $customer = CustomerModel::where(['id' => $id])->first();
+
+        return view('/admin/customerEdit', compact('customer'));
+    }
+
+    public function saveEdit(Request $request, $id)
+    {
+        $product = ProductModel::where(['id' => $id])->first();
+
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
+        $product->amount = $request->input('amount');
+        $product->price = $request->input('price');
+
+        $product->save();
+
+        return redirect()->route('adminProducts');
+    }
+
     public function update(Request $request, $id)
     {
         $product = ProductModel::where(['id' => $id])->first();
 
-        return view('/admin/editUpdate', compact('product'));
+        return view('/admin/update', compact('product'));
     }
 
     public function index()

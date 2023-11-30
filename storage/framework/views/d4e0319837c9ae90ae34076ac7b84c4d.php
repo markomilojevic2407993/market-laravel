@@ -33,7 +33,8 @@
     <td><?php echo e($customer->name); ?></td>
     <td><?php echo e($customer->email); ?></td>
     <td><?php echo e($customer->price); ?></td>
-    <td><a class="btn btn-sm btn-danger" href="<?php echo e(route('obrisiKorisnika',['customer'=>$customer->id])); ?>" >Delete<?php echo e($customer->id); ?></a></p>
+    <td><a class="btn btn-sm btn-danger" href="<?php echo e(route('obrisiKorisnika',['customer'=>$customer->id])); ?>" >Delete</a>
+    <a href="<?php echo e(route('editCustomer',['id'=>$customer->id])); ?>" class="btn btn-warning btn-sm">Update</a>
   </tr>
 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
 </tbody>
